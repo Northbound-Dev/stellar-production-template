@@ -1,0 +1,11 @@
+# Default owners for all changes
+* @Northbound-Dev
+
+# Smart contract ownership
+/contracts/ @Northbound-Dev
+
+# Frontend ownership
+/frontend/ @Northbound-Dev
+
+# Security reporting and policy
+/docs/SECURITY.md @Northbound-Dev

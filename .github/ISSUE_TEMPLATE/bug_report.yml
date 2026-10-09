@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible issue in the project
+title: ""
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please provide as much detail as possible so we can reproduce and fix it quickly.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One-sentence description of the issue
+      placeholder: e.g. Contract returns the wrong greeting for empty input
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Rust version, Node version, browser, and network if relevant
+      placeholder: |
+        OS: Ubuntu 22.04
+        Rust: 1.79.0
+        Node: 18.20.0
+        Network: testnet
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Provide precise steps to reproduce the bug
+      placeholder: |
+        1. Start the local dev environment
+        2. Invoke the contract with ""
+        3. Observe error output
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: The contract should return a graceful, validated response.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: The contract panics or returns malformed data.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Paste relevant logs, command output, or screenshots
+      placeholder: Optional but helpful

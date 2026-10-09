@@ -1,31 +1,43 @@
 # Stellar Production Template
 
-A polished, maintainable starter for building Stellar Soroban applications with a strong emphasis on security, testability, documentation, and deployment discipline.
+A production-oriented starter for building Stellar Soroban applications with a strong emphasis on security, maintainability, testing, and contributor clarity.
 
-## Why this project is submission-ready
+## Why this project is maintainable
 
-This project is intentionally structured to be clear, auditable, and contributor-friendly. It gives maintainers and reviewers:
+This repository is structured to be clear, reviewable, and trustworthy for public use. It demonstrates:
 
-- a secure smart contract baseline
-- transparent architecture and deployment guidance
-- a documented contributor and security workflow
-- a clean front-end landing page for documentation and onboarding
-- CI coverage and release-minded project hygiene
+- a secure contract baseline with explicit ownership patterns
+- transparent deployment and network configuration guidance
+- serious documentation standards for contributors and maintainers
+- contributor workflows that emphasize issue quality and PR review readiness
+- CI and repository hygiene expected in public OSS projects
 
 ## Project structure
 
 ```text
 stellar-production-template/
-├── contracts/            # Soroban smart contract code and tests
-├── frontend/             # React app for docs and dApp UI
-├── scripts/              # Local validation and deployment helpers
-├── docs/                 # Contributor, deployment, security, and architecture docs
-├── .github/workflows/    # CI automation
-├── .env.example          # Environment variable template
-├── LICENSE               # MIT license
-├── README.md             # Project overview and developer onboarding
-└── .gitignore            # Safe repo hygiene defaults
+├── contracts/              # Soroban smart contract code and tests
+├── frontend/               # React frontend and documentation landing page
+├── scripts/                # Local validation and deployment helpers
+├── docs/                   # Architecture, security, contribution, roadmap, and maintainer docs
+├── .github/                # Issue templates, PR template, CODEOWNERS, dependabot config
+├── .env.example            # Example environment variables for deployment
+├── .gitignore              # Safe project hygiene defaults
+├── LICENSE                 # MIT license
+├── README.md               # Project overview and onboarding
+└── .github/workflows/      # CI validation pipeline
 ```
+
+## Maintainer review checklist
+
+This project is designed to satisfy the expectations of a serious maintainer review board:
+
+- clear purpose and scope
+- documented architecture and operational flow
+- security reporting path and policy
+- issue and PR templates
+- roadmap and maintainer-facing documentation
+- reproducible validation and dependency maintenance
 
 ## Quick start
 
@@ -49,7 +61,7 @@ cd ../frontend
 npm install
 ```
 
-### Run tests
+### Run validation
 
 ```bash
 cd contracts
@@ -59,50 +71,32 @@ cd ../frontend
 npm test -- --watch=false
 ```
 
-### Local validation script
+### Local script
 
 ```bash
 ./scripts/test.sh
 ```
 
-## Maintainer-focused project standards
+## Security and operational standards
 
-### Security
+- explicit admin handling and safe state patterns in contracts
+- documented vulnerability disclosure process
+- dependency review via GitHub automation
+- environment-specific deployment guidance
+- public repo standards for issue quality, PR discipline, and maintainership
 
-- explicit contract admin handling
-- safe ownership boundaries and state checks
-- documented vulnerability reporting
-- dependency monitoring guidance
-
-### Testing
-
-- Rust unit tests for contract logic
-- frontend build/test readiness
-- CI pipeline for reproducible validation
-
-### Deployment discipline
-
-- documented environment-specific configuration
-- public deployment flow for testnet and mainnet
-- verification steps and rollback references
-
-### Documentation
-
-- architecture overview
-- contribution process
-- deployment guide
-- security policy
-
-## Documentation links
+## Documentation index
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
 - [docs/SECURITY.md](docs/SECURITY.md)
 - [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
+- [docs/MAINTAINER_GUIDE.md](docs/MAINTAINER_GUIDE.md)
+- [docs/ROADMAP.md](docs/ROADMAP.md)
 
 ## Contributing
 
-We welcome bug reports, feature requests, and pull requests. Please read the contributor guide before opening a PR.
+We welcome bug reports, feature suggestions, and pull requests. Please read the contribution guide before opening a new issue or PR.
 
 ## License
 
@@ -112,4 +106,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 - [Stellar Development Foundation](https://stellar.org)
 - [Soroban documentation](https://developers.stellar.org/docs/)
-- The broader Stellar and open-source community
+- The broader Stellar ecosystem and open-source contributor community

@@ -1,0 +1,49 @@
+name: Feature request
+description: Suggest a new capability or improvement
+title: ""
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Please explain the problem, the proposed solution, and why it matters.
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature summary
+      placeholder: e.g. Add multi-network deployment validation
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user or developer problem does this solve?
+      placeholder: Developers need a safer, documented deployment flow for mainnet validation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      placeholder: Add a deploy verification script with checks before approval.
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact and value
+      description: Explain who benefits and why it matters in the Stellar ecosystem
+      placeholder: This reduces operational risk and improves developer confidence.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      placeholder: Manual deployment checks, separate scripts, or custom CI runners.

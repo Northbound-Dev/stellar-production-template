@@ -1,4 +1,4 @@
-use soroban_sdk::{contract, contractimpl, Env, Address, String, symbol_short};
+use soroban_sdk::{contract, contractimpl, Symbol, Env, Address, String, symbol_short};
 
 const ADMIN: Symbol = symbol_short!("ADMIN");
 

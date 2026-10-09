@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability report
+    url: https://github.com/Northbound-Dev/stellar-production-template/security/advisories
+    about: Please report security issues privately through GitHub Security Advisories.
+  - name: General question or discussion
+    url: https://github.com/Northbound-Dev/stellar-production-template/discussions
+    about: Ask general project questions here.
