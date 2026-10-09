@@ -9,11 +9,4 @@ keywords = ["stellar", "soroban", "smart-contract"]
 categories = ["blockchain", "cryptography"]
 
 [dependencies]
-soroban-sdk = { version = "15.0.0", features = ["testutils"] }
-
-[dev-dependencies]
-assert_eq = "1.0.0"
-
-[[test]]
-name = "hello_world"
-harness = false
+soroban-sdk = { version = "29.0.0", features = ["testutils"] }

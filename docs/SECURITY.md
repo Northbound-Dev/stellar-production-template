@@ -2,60 +2,71 @@
 
 ## Supported Versions
 
-We provide security updates for the following versions:
+We provide security updates for the following supported versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
-| < 0.1.0 | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| 0.1.x   | ✅        |
+| < 0.1.0 | ❌        |
 
 ## Reporting a Vulnerability
 
-To report a security vulnerability, please use the [GitHub Security Advisory](https://github.com/Northbound-Dev/stellar-production-template/security/advisories) process.
+Please do not open a public issue for a security vulnerability. Instead:
 
-Alternatively, you can email security@northbound-dev.com with details of the vulnerability.
+1. Use GitHub Security Advisories for private disclosure, or
+2. Email the maintainers at security@northbound-dev.com with a detailed report.
 
-Please do not disclose security vulnerabilities publicly until they have been addressed by the maintainers.
+Please include:
+- affected component and version
+- reproduction steps or exploit details
+- affected environment and impact
+- any suggested remediation or proof of concept
 
-## What Happens After You Report
+We aim to respond within 48 hours and keep the reporter informed during triage and remediation.
 
-When you submit a security report, the maintainers will:
+## Security Review Process
 
-1. Acknowledge receipt of your vulnerability report
-2. Investigate the vulnerability and create a fix
-3. Prepare a security advisory and release
-4. Credit you for the discovery (if desired)
+When a report is received, maintainers will:
 
-We aim to respond to all security reports within 48 hours.
+1. Acknowledge the report
+2. Assess severity and safety impact
+3. Reproduce and validate the issue in a controlled environment
+4. Create and test a fix
+5. Prepare a patch release and advisory if needed
+6. Recognize the reporter where appropriate
 
-## Security Best Practices
+## Security Hardening Expectations
 
-This template incorporates several security best practices for Stellar Soroban development:
+This project follows a security-first design for Soroban development:
 
 ### Contract Security
-- Access controls on administrative functions
-- Integer overflow/underflow protection
-- Input validation and sanitization
-- External call safety checks
-- Contract size optimization
+- explicit admin and authorization logic
+- predictable state updates with no hidden mutation
+- safe string handling and validation
+- minimal contract surface area
+- dependency hygiene and version pinning
 
-### Development Security
-- Dependency scanning in CI
-- Environment variable protection
-- Secure defaults
-- Regular dependency updates
+### Frontend Security
+- no secrets committed to source code
+- environment variables isolated to deployment configuration
+- explicit network selection and contract address validation
+- safe handling of user-provided values in the UI
 
-### Operational Security
-- Network-specific configuration
-- Deployment verification steps
-- Monitoring and alerting recommendations
-- Backup and recovery procedures
+### CI and Dependency Security
+- automated testing on every change
+- dependency review and audit workflows
+- reproducible builds and versioned tooling
+- review before merge to production branches
 
-## Dependencies
+## Dependency Monitoring
 
-We monitor our dependencies for security vulnerabilities using:
+We monitor known vulnerabilities using:
 - GitHub Dependabot
-- RustSec advisory database
-- npm audit
+- cargo audit / RustSec advisory checks
+- npm audit for frontend dependencies
 
-If you discover a vulnerability in one of our dependencies, please report it through the appropriate channel for that dependency.
+If a dependency issue is identified, we will evaluate, remediate, and disclose according to the severity and impact.
+
+## Responsible Disclosure
+
+Please refrain from publicly disclosing vulnerabilities until a fix has been released or the maintainers confirm disclosure is safe. This keeps users protected and allows a coordinated response.

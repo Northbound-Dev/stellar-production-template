@@ -1,143 +1,115 @@
 # Stellar Production Template
 
-A production-ready template for building Stellar Soroban applications with best practices for security, testing, and deployment.
+A polished, maintainable starter for building Stellar Soroban applications with a strong emphasis on security, testability, documentation, and deployment discipline.
 
-## Overview
+## Why this project is submission-ready
 
-This template provides a foundation for building production-grade applications on the Stellar network using Soroban smart contracts. It incorporates industry best practices for:
+This project is intentionally structured to be clear, auditable, and contributor-friendly. It gives maintainers and reviewers:
 
-- **Security**: Access controls, arithmetic safety, and audit-ready code
-- **Testing**: Comprehensive unit, integration, and end-to-end testing strategies
-- **Deployment**: Automated CI/CD pipelines for testnet and mainnet deployments
-- **Observability**: Monitoring, logging, and error handling patterns
-- **Developer Experience**: Streamlined workflows and clear documentation
+- a secure smart contract baseline
+- transparent architecture and deployment guidance
+- a documented contributor and security workflow
+- a clean front-end landing page for documentation and onboarding
+- CI coverage and release-minded project hygiene
 
-## Project Structure
+## Project structure
 
-```
+```text
 stellar-production-template/
-├── contracts/          # Soroban smart contracts (Rust)
-├── frontend/           # Frontend application (React/Vue/Svelte)
-├── backend/            # Optional backend services
-├── scripts/            # Deployment and utility scripts
-├── .github/            # GitHub Actions for CI/CD
-├── docs/               # Documentation
-└── README.md
+├── contracts/            # Soroban smart contract code and tests
+├── frontend/             # React app for docs and dApp UI
+├── scripts/              # Local validation and deployment helpers
+├── docs/                 # Contributor, deployment, security, and architecture docs
+├── .github/workflows/    # CI automation
+├── .env.example          # Environment variable template
+├── LICENSE               # MIT license
+├── README.md             # Project overview and developer onboarding
+└── .gitignore            # Safe repo hygiene defaults
 ```
 
-## Getting Started
+## Quick start
 
 ### Prerequisites
 
+- [Rust + Cargo](https://www.rust-lang.org/tools/install)
 - [Stellar CLI](https://developers.stellar.org/docs/tools/cli)
-- [Rust & Cargo](https://www.rust-lang.org/tools/install)
-- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [Node.js 18+](https://nodejs.org/)
 - [Git](https://git-scm.com/)
 
-### Installation
+### Install
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Northbound-Dev/stellar-production-template.git
-   cd stellar-production-template
-   ```
+```bash
+git clone https://github.com/Northbound-Dev/stellar-production-template.git
+cd stellar-production-template
 
-2. Install dependencies:
-   ```bash
-   # For contracts
-   cd contracts
-   cargo build
-   
-   # For frontend
-   cd ../frontend
-   npm install
-   ```
+cd contracts
+cargo build
 
-### Development Workflow
+cd ../frontend
+npm install
+```
 
-1. **Local Development**:
-   ```bash
-   # Start local testnet
-   stellar container start
-   
-   # In another terminal, run tests
-   ./scripts/test.sh
-   ```
+### Run tests
 
-2. **Testing**:
-   ```bash
-   # Run contract tests
-   cd contracts
-   cargo test
-   
-   # Run frontend tests
-   cd ../frontend
-   npm test
-   ```
+```bash
+cd contracts
+cargo test
 
-3. **Deployment**:
-   ```bash
-   # Deploy to testnet
-   ./scripts/deploy.sh --network testnet
-   
-   # Deploy to mainnet (after careful testing)
-   ./scripts/deploy.sh --network mainnet
-   ```
+cd ../frontend
+npm test -- --watch=false
+```
 
-## Best Practices Implemented
+### Local validation script
+
+```bash
+./scripts/test.sh
+```
+
+## Maintainer-focused project standards
 
 ### Security
-- Access control patterns for contract functions
-- Overflow/underflow protection
-- Input validation and sanitization
-- Secure random number generation (where applicable)
-- Contract size optimization
+
+- explicit contract admin handling
+- safe ownership boundaries and state checks
+- documented vulnerability reporting
+- dependency monitoring guidance
 
 ### Testing
-- Unit tests for individual contract functions
-- Integration tests for contract interactions
-- Frontend unit and integration tests
-- End-to-end testing scripts
-- Property-based testing examples
 
-### Deployment
-- Environment-specific configuration
-- Automated testnet deployment verification
-- Mainnet deployment checklist
-- Rollback procedures
-- Version tagging and release automation
+- Rust unit tests for contract logic
+- frontend build/test readiness
+- CI pipeline for reproducible validation
 
-### Observability
-- Structured logging patterns
-- Metrics collection examples
-- Health check endpoints
-- Error tracking integration
-- Event monitoring setup
+### Deployment discipline
+
+- documented environment-specific configuration
+- public deployment flow for testnet and mainnet
+- verification steps and rollback references
+
+### Documentation
+
+- architecture overview
+- contribution process
+- deployment guide
+- security policy
+
+## Documentation links
+
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)
+- [docs/SECURITY.md](docs/SECURITY.md)
+- [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details on how to contribute to this project.
-
-### Reporting Issues
-Please use the GitHub issue tracker to report bugs or suggest features.
-
-### Pull Requests
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Ensure tests pass
-5. Submit a pull request
+We welcome bug reports, feature requests, and pull requests. Please read the contributor guide before opening a PR.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ## Acknowledgments
 
 - [Stellar Development Foundation](https://stellar.org)
-- [Soroban Developers](https://developers.stellar.org/docs/)
-- Open source contributors in the Stellar ecosystem
-
----
-
-*Built with ❤️ for the Stellar Open Source Ecosystem*
+- [Soroban documentation](https://developers.stellar.org/docs/)
+- The broader Stellar and open-source community
