@@ -9,4 +9,4 @@ keywords = ["stellar", "soroban", "smart-contract"]
 categories = ["blockchain", "cryptography"]
 
 [dependencies]
-soroban-sdk = { version = "29.0.0", features = ["testutils"] }
+soroban-sdk = { version = "30.0.0", features = ["testutils"] }
